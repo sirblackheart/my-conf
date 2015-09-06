@@ -19,6 +19,6 @@ fi
 
 config() {
 	if [[ $* == "zsh" ]]; then FILE=~/.zshrc && vim $FILE;
-	if [[ $* == "vim" ]]; then FILE=~/.vimrc && vim $FILE;
+	elif [[ $* == "vim" ]]; then FILE=~/.vimrc && vim $FILE;
 	else echo "not configurable"; fi
 }
