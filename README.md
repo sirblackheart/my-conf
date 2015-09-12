@@ -31,21 +31,21 @@ MY_CONF_PATH=/path/to/my/config/files
 
 inside this folder you can then put your config files named "configname.zsh". For example alias.zsh.
 
-For the config file to be loaded you have to add it to the my-conf list. Either put the list before you source oh-my-zsh or in your my-config config folder inside a file called config.zsh.
+For the config file to be loaded you have to add it to the myconf list. Either put the list before you source oh-my-zsh or in your my-config config folder inside a file called config.zsh.
 
 ```shell
 #either create a new list
-my-conf=(alias config2 config3)
+myconf=(alias config2 config3)
 #or append it to the list
-my-conf+=(config4 config5 config6)
+myconf+=(config4 config5 config6)
 ```
 
 If you want a config to be only loaded for a certain OS you have two possibilities. Either you put the config file inside my-conf-config-folder/os
-or you check for the os and only append it then to the my-conf list. Currently three OS types are supported, OSX, Linux and MSYS(Windows).
+or you check for the os and only append it then to the myconf list. Currently three OS types are supported, OSX, Linux and MSYS(Windows).
 The folders inside my-conf-config-folder would be osx, linux, msys. The ZSH variables to check if you are in an OS are OSX, LINUX and MSYS.
 For example to add alias only for Linux with a zsh check:
 ```shell
-(( LINUX )) && my-conf+=(alias)
+(( LINUX )) && myconf+=(alias)
 ```
 Otherwise just move the alias.zsh file into a folder called linux inside your my-conf-config-folder.
 
