@@ -1,4 +1,6 @@
-((MSYS)) && alias sudo=""
+if (( ! $+commands[sudo] )) ; then
+	alias sudo=""
+fi
 
 if (( $+commands[nvim] )) ; then
 	alias vim="nvim"
@@ -9,11 +11,9 @@ if (( $+commands[mplayer] )) ; then
 	alias fm4.2="mplayer -cache 8192 -cache-min 20 http://198.50.155.189:8009"
 fi
 
-((LINUX || OSX)) && alias suvim="sudo -E vim"
-((LINUX || OSX)) && alias root="su -m root"
+alias suvim="sudo -E vim"
+alias root="su -m root"
 
-((LINUX)) && alias open="xdg-open"
-((MSYS)) && alias open="start"
 ((LINUX || MSYS)) && alias upgrade="sudo pacman -Syu"
 ((OSX)) && alias upgrade="brew update && brew upgrade --all"
 
