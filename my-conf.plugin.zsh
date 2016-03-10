@@ -1,4 +1,4 @@
-[[ -z $MY_CONF_PATH ]] && MY_CONF_PATH="$(dirname $0)/config"
+[[ -z $MY_CONF_PATH ]] && MY_CONF_PATH="$HOME/.config/my-conf"
 dir=$MY_CONF_PATH
 source "$(dirname $0)/os-check.zsh"
 [[ -z $config && -f "${dir}/config.zsh" ]] && set -A myconf && source "${dir}/config.zsh"
